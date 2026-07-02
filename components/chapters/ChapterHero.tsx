@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import type { Chapter } from "@/lib/quiz/types";
 
@@ -5,6 +6,12 @@ export function ChapterHero({ chapter }: { chapter: Chapter }) {
   return (
     <section className="border-b border-line bg-ink text-bone">
       <Container className="py-14 sm:py-20">
+        <Link
+          href="/chapters"
+          className="mb-6 inline-block text-xs font-medium text-bone/50 transition-colors hover:text-bone"
+        >
+          ← All chapters
+        </Link>
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
           Chapter {chapter.number} · {chapter.stage}
         </p>

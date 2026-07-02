@@ -75,6 +75,28 @@ body {
   color: var(--color-bone);
 }
 
+/* The Path (/chapters) — panel reveals and spine nodes. The global
+   prefers-reduced-motion override above makes these transitions instant;
+   PathJourney additionally skips hiding panels entirely in that case. */
+.path-panel-body {
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.path-panel-body[data-hidden="true"] {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.path-node {
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+[data-lit="true"] .path-node {
+  background: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+}
+
 /* Long-form article styling for chapter lessons and method page */
 .prose-tif {
   font-size: 1.0625rem;
