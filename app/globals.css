@@ -50,6 +50,18 @@
   }
 }
 
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Installed to a home screen: suppress the pull-to-refresh rubber-banding so
+   it feels like an app surface, not a browser page */
+@media (display-mode: standalone) {
+  body {
+    overscroll-behavior-y: contain;
+  }
+}
+
 body {
   background: var(--color-bone);
   color: var(--color-ink);

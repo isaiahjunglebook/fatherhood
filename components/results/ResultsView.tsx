@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { decodeAnswers } from "@/lib/quiz/encode";
+import { saveLastResultsUrl } from "@/lib/progress";
 import { computeResults } from "@/lib/results/engine";
 import { archetypes } from "@/content/archetypes";
 import { chapterBySlug } from "@/content/chapters";
@@ -45,6 +46,11 @@ export function ResultsView() {
   useEffect(() => {
     if (!result) router.replace("/quiz");
   }, [result, router]);
+
+  // Remember the map so a returning member can reopen it from the chapters hub.
+  useEffect(() => {
+    if (result && code) saveLastResultsUrl(`/results?a=${encodeURIComponent(code)}`);
+  }, [result, code]);
 
   if (!result) return null;
 

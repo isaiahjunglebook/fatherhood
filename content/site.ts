@@ -6,7 +6,7 @@ export const site = {
   description:
     "A research-backed preparation path for men becoming fathers — from the man you are now through your child's seventh year. Take the readiness quiz and get your personal map.",
   nav: [
-    { href: "/chapters/the-man", label: "Chapters" },
+    { href: "/chapters", label: "Chapters" },
     { href: "/method", label: "The Method" },
     { href: "/about", label: "About" },
   ],
