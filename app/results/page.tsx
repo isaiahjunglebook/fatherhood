@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <Container className="py-10 sm:py-14">
+    <Container className="min-h-dvh py-10 sm:py-14">
       <Suspense>
         <ResultsView />
       </Suspense>

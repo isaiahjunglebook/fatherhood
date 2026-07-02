@@ -31,19 +31,19 @@ export function ResultsView() {
     return answers ? computeResults(answers) : null;
   }, [code]);
 
-  // null = still checking localStorage (avoids a gate flash for returning visitors)
-  const [unlocked, setUnlocked] = useState<boolean | null>(null);
+  // Read synchronously on first client render — the gate (or unlocked map)
+  // paints immediately, with no layout shift from a late localStorage check.
+  const [unlocked, setUnlocked] = useState<boolean | null>(() => {
+    if (typeof window === "undefined") return null;
+    try {
+      return localStorage.getItem(UNLOCK_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
-    if (!result) {
-      router.replace("/quiz");
-      return;
-    }
-    try {
-      setUnlocked(localStorage.getItem(UNLOCK_KEY) === "1");
-    } catch {
-      setUnlocked(false);
-    }
+    if (!result) router.replace("/quiz");
   }, [result, router]);
 
   if (!result) return null;
