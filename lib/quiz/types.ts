@@ -52,12 +52,30 @@ export interface Citation {
   source: string;
 }
 
+export type GlyphId =
+  | "man"
+  | "conception"
+  | "pregnancy"
+  | "arrival"
+  | "bond"
+  | "guide";
+
+/** The chapter's presence on The Path (/chapters): its mark and transformation. */
+export interface ChapterPath {
+  glyph: GlyphId;
+  /** "You arrive" line — who the man is walking in. Lowercase fragment. */
+  arrive: string;
+  /** "You leave" line — who he is walking out. Lowercase fragment. */
+  leave: string;
+}
+
 export interface Chapter {
   slug: ChapterSlug;
   number: number;
   title: string;
   stage: string;
   tagline: string;
+  path: ChapterPath;
   dimension: Dimension;
   /** Weight per life stage used when ordering the personalized sequence. */
   lifeStageRelevance: Record<LifeStage, number>;

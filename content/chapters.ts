@@ -15,6 +15,11 @@ export const chapters: Chapter[] = [
     title: "The Man",
     stage: "Before everything",
     tagline: "The father your child gets is the man you are under pressure. Start there.",
+    path: {
+      glyph: "man",
+      arrive: "running your father's software",
+      leave: "having chosen your own",
+    },
     dimension: "selfAwareness",
     lifeStageRelevance: { single: 1.0, trying: 0.9, expecting: 0.8, newDad: 0.7 },
     overview: [
@@ -72,6 +77,11 @@ export const chapters: Chapter[] = [
     title: "Conception",
     stage: "Deciding & trying",
     tagline: "Trying for a baby is a joint project with a 90-day runway. Most men show up on day zero.",
+    path: {
+      glyph: "conception",
+      arrive: "hoping it happens",
+      leave: "an equal partner in a 90-day project",
+    },
     dimension: "relationship",
     lifeStageRelevance: { single: 0.8, trying: 1.0, expecting: 0.2, newDad: 0.1 },
     overview: [
@@ -130,6 +140,11 @@ export const chapters: Chapter[] = [
     title: "The Pregnancy",
     stage: "Nine months",
     tagline: "She's building the baby. You're building the world the baby lands in.",
+    path: {
+      glyph: "pregnancy",
+      arrive: "a spectator to her pregnancy",
+      leave: "the man building the world the baby lands in",
+    },
     dimension: "knowledge",
     lifeStageRelevance: { single: 0.5, trying: 0.9, expecting: 1.0, newDad: 0.2 },
     overview: [
@@ -184,6 +199,11 @@ export const chapters: Chapter[] = [
     title: "The Arrival",
     stage: "Birth to age one",
     tagline: "The year that breaks the unprepared — and builds the initiated.",
+    path: {
+      glyph: "arrival",
+      arrive: "terrified of the year that breaks men",
+      leave: "the calmest person in the room at 3 a.m.",
+    },
     dimension: "knowledge",
     lifeStageRelevance: { single: 0.5, trying: 0.7, expecting: 1.0, newDad: 0.6 },
     overview: [
@@ -236,6 +256,11 @@ export const chapters: Chapter[] = [
     title: "The Bond",
     stage: "Ages one to three",
     tagline: "The toddler years are where fathers become irreplaceable — through play.",
+    path: {
+      glyph: "bond",
+      arrive: "unsure what a father is for this early",
+      leave: "irreplaceable — through play",
+    },
     dimension: "relationship",
     lifeStageRelevance: { single: 0.4, trying: 0.5, expecting: 0.6, newDad: 1.0 },
     overview: [
@@ -286,6 +311,11 @@ export const chapters: Chapter[] = [
     title: "The Guide",
     stage: "Ages four to seven",
     tagline: "The age of questions. The father becomes the interpreter of the world.",
+    path: {
+      glyph: "guide",
+      arrive: "answering questions",
+      leave: "the interpreter of the world",
+    },
     dimension: "selfAwareness",
     lifeStageRelevance: { single: 0.3, trying: 0.4, expecting: 0.4, newDad: 0.9 },
     overview: [
