@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { ChapterHero } from "@/components/chapters/ChapterHero";
+import { ChapterReadTracker } from "@/components/chapters/ChapterReadTracker";
 import { WhoItsFor } from "@/components/chapters/WhoItsFor";
 import { LessonBody } from "@/components/chapters/LessonBody";
 import { ResearchSpine } from "@/components/chapters/ResearchSpine";
@@ -45,6 +46,7 @@ export default async function ChapterPage({ params }: { params: Promise<Params> 
 
   return (
     <>
+      <ChapterReadTracker slug={chapter.slug} />
       <ChapterHero chapter={chapter} />
       <Container className="py-12">
         <div className="space-y-5">
@@ -83,8 +85,8 @@ export default async function ChapterPage({ params }: { params: Promise<Params> 
         </div>
 
         <div className="mt-10 flex items-center justify-between text-sm">
-          <Link href="/" className="text-ink-faint hover:text-ink">
-            ← Home
+          <Link href="/chapters" className="text-ink-faint hover:text-ink">
+            ← All chapters
           </Link>
           <Link
             href={`/chapters/${next.slug}`}
